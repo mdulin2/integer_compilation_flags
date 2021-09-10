@@ -7,11 +7,11 @@ gcc conversion.c -o conversion -O0 -Wsign-conversion -Wconversion
 */
 int a = 0;
 
-int c = 1;
+unsigned int c = 1;
 
 int main(){
 
 	unsigned int b = a;
-	unsigned int d = c; 
+	int d = c; 
 	a += 1; 
 }

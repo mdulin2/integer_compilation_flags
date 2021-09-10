@@ -1,8 +1,8 @@
 ## Overview
 - Integer bugs are interesting and the root of A LOT of problems in this world...
 - Can we cause them to crash or detect them at compile time? Below is a list of interesting things to look for.
-- The overflow check (ftrapv) checking only works on signed integers (so, not floats and unsigned ints).:
-	- DAMN!? I wish this worked on unsigned values as well :( 
+- Unsigned and signed integer overflows are two different stories. Clang can do both dynamically but GCC cannot. 
+- Floats do not have any sort of dynamic protection on overflows. 
 - tldr; 
 	- I would use ``Wsign-conversion, Wconversion, ftrapv`` for GCC. Everything else looks like a bunch of fluff that causes an insane amount of warnings and nothing else. 
 	- In clang, I would use the same flags as GCC plus the added '-fsanitize=integer' to add MUCH MUCH more dynamic bug finding at run time. 

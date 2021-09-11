@@ -15,11 +15,12 @@ clang-11 truncation.c -o truncation -fsanitize=implicit-unsigned-integer-truncat
 */
 int a = 0x0;
 
-long long c = LONG_MAX;
+//long long c = LONG_MAX;
+long long c = 0x7FFFFFFF80000000;
 
 int main(){
 
 	long long b = a;
-	int d = c; 
+	int d = c; // Truncation bug
 	a += 1; 
 }

@@ -8,7 +8,7 @@ gcc truncation.c -o truncation -Wconversion -Wsign-conversion
 */
 int a = 0;
 
-long long c = 0;
+long long c = LONG_MAX; 
 
 int main(){
 

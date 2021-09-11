@@ -9,7 +9,7 @@ clang float_overflow.c -o float_overflow -ggdb -O0 -fsanitize=integer -ftrapv
 
 int main()
 {
-	float f = FLT_MAX;
+	float f = (float) FLT_MAX;
 
 	f *= (1+FLT_EPSILON);
 	printf("Overflows value: %f\n",f);

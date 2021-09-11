@@ -13,8 +13,6 @@ gcc overflow.c -o overflow -O0 -ftrapv -ggdb
 
 int main(){
 	int a = 0x7FFFFFFF; 
-	//double a = DBL_MAX - 1; // Float does not work
-	//unsigned int a = 0xFFFFFFFF;  // Unsigned does not work
 	a = a + 1; 
-	printf("Value: %f\n", a);
+	printf("Value: %d\n", a);
 }
